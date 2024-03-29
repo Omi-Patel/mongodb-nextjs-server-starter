@@ -2,6 +2,11 @@ GET http://localhost:8000/user
 
 ###
 
+GET http://localhost:8000/user/1934omp@gmail.com
+
+
+###
+
 POST http://localhost:8000/user
 Content-Type: application/json
 
@@ -10,3 +15,46 @@ Content-Type: application/json
     "email":"test@gmail.com",
     "image":"Test Image"
 }
+
+###
+
+GET http://localhost:8000/post
+
+
+###
+
+POST http://localhost:8000/post
+Content-Type: application/json
+
+{
+    "postText" : "Sample Post Msg",
+    "createdAt" : "32542133",
+    "createdBy" : "6600fe01e2c47d44e12fb94c",
+    "imageUrl" : "Test Image"
+}
+
+###
+
+PUT http://localhost:8000/post/like/6602e4c9bcde4fb3d0d1ad5b
+Content-Type: application/json
+
+{
+    "userId" : "6600fe01e2c47d44e12fb94c",
+    "isLike" : true
+}
+
+###
+
+POST http://localhost:8000/comment
+Content-Type: application/json
+
+{
+    "post" : "6602e4c9bcde4fb3d0d1ad5b",
+    "createdAt" : "32542133",
+    "createdBy" : "6600fe01e2c47d44e12fb94c",
+    "commentText" : "Test Comment"
+}
+
+###
+
+DELETE http://localhost:8000/comment/660440c2eac75b8a7fc71962

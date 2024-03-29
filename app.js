@@ -24,6 +24,14 @@ app.get("/", (req, res) => {
 const userRoute = require("./routes/userRoute");
 app.use("/user", userRoute, cors());
 
+// Post Route
+const postRoute = require("./routes/postRoute");
+app.use("/post", postRoute, cors());
+
+// Comment Route
+const commentRoute = require("./routes/commentRoute");
+app.use("/comment", commentRoute, cors());
+
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });

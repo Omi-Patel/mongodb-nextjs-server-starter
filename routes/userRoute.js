@@ -13,7 +13,17 @@ router.get("/", async (req, res) => {
   }
 });
 
-// Get User BY ID
+// Get User BY Email
+
+router.get("/:email", async (req, res) => {
+  const userEmail = req.params.email;
+  try {
+    const users = await User.findOne({ email: userEmail });
+    res.json(users);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
 
 // Create User
 router.post("/", async (req, res) => {
